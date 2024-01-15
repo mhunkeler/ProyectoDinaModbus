@@ -1,0 +1,2 @@
+void eFSKD();
+void onReset();

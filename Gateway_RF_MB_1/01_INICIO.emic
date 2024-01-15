@@ -1,0 +1,17 @@
+#addToMacro(UC_FAMILY,pic33ep512mc806)
+//--------------Hardware Config---------------------
+#insertFile(_pcb\pcb.emic,pcb=DynaBase_PCB_V2.0)
+
+//------------- Driver Config -----------------------
+
+#insertFile(_api\Indicators\LEDs\led.emic)
+#insertFile(_api\Timer\Timer_API_V1.emic)
+
+#insertFile(_api/Dyna/DynaBase.emic)
+
+#newRFIcode(_api\Wireless_Communication\Radio_FSK\Radio_FSK.emic)
+#newRFIcode(_api/Protocol/ModBus/modbus.emic,puerto=1,baud=9600,bufferIn=512,bufferOut=512,frameLf='\n')
+
+
+//---------------------------------------------------
+#insertFile(_main/baremetal/main.emic)

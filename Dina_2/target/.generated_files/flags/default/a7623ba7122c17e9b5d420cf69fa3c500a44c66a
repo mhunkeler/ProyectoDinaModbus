@@ -1,0 +1,1 @@
+ -c -mcpu=$(MP_PROCESSOR_OPTION)      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -msmall-code -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"C:\Users\RFI1\Desktop\DROPBOX_NUEVO\Dropbox (Personal)\___RFI Project\Firm\Developments\mariano.hunkeler@rfindustrial.com\My Projects\Prueba_DINA_Modbus\Dina_2\target\codigo.c

@@ -1,0 +1,1 @@
+blkLed2 3? Evaluate:detectarCiclo 2getForce 0[in case of:1, do:AccPower 1resample 0pFSKD 0blkLed1 3setTime1 2 ][in case of:2, do:AccPower 1resample 0pFSKD 0blkLed1 3setTime1 2 ]+-?blkLed2 3AccPower 1blkLed2 3setTime1 2initDetector 0AccPower 1
