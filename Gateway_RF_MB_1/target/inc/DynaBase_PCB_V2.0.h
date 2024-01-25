@@ -38,6 +38,19 @@
 #define RPOUT_MODBUS_TX              RPOR6bits.RP85R
 #define RPIN_MODBUS_TX              85
 #define HAL_PinMap_MODBUS_TX(cfg_type)
+#define TRIS_MODBUS_CTS _TRISG6
+#define PIN_MODBUS_CTS  _RG6
+#define LAT_MODBUS_CTS  _LATG6
+#define ODC_MODBUS_CTS _ODCG6
+#define RPOUT_MODBUS_CTS              RPOR13bits.RP118R
+#define RPIN_MODBUS_CTS              118
+#define HAL_PinMap_MODBUS_CTS(cfg_type)
+#define TRIS_MODBUS_RTS _TRISE7
+#define PIN_MODBUS_RTS  _RE7
+#define LAT_MODBUS_RTS  _LATE7
+#define RPOUT_MODBUS_RTS              RPOR6bits.RP87R
+#define RPIN_MODBUS_RTS              87
+#define HAL_PinMap_MODBUS_RTS(cfg_type)
 #define TRIS_Led1 _TRISD8
 #define PIN_Led1  _RD8
 #define LAT_Led1  _LATD8

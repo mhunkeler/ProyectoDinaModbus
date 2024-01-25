@@ -10,7 +10,7 @@ void eAccReady(int16_t AccX,int16_t AccY,int16_t AccZ)
 		blkLed1(100, 200, 1);
 		setTime1(5000, 'T');
 		break;
-	case 2:
+	case 3:
 		AccPower(0);
 		resample();
 		pFSKD();

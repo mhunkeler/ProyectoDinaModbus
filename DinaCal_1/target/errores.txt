@@ -1,0 +1,32 @@
+
+C:\Users\RFI\Dropbox\___RFI Project\Firm\Developments\ing.ramiro.a.l@gmail.com\My Projects\Prueba_DINA_Modbus\DinaCal_1\target>"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   codigo.c  -o build/default/production/codigo.o  -c -mcpu=24FJ128GC006  -MP -MMD -MF "build/default/production/codigo.o.d"        -g -omf=elf -DXPRJ_default=default      -msmall-code -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16" 
+In file included from inc\adc.h:2:0,
+                 from codigo.c:36:
+c:\program files\microchip\xc16\v2.00\bin\bin\../..\support\peripheral_24F/adc.h:2940:2: warning: #warning "Does not build on this target"
+In file included from codigo.c:53:0:
+inc\conversionFunctions.h:13:40: error: expected ')' before 'number'
+In file included from src.c:4:0,
+                 from codigo.c:56:
+src/DetectorCiclo.c:6:1: warning: data definition has no type or storage class
+src/DetectorCiclo.c:6:1: warning: type defaults to 'int' in declaration of 'bufferIndex_g'
+In file included from src.c:5:0,
+                 from codigo.c:56:
+src/Resample.c: In function 'resample':
+src/Resample.c:40:5: warning: pointer targets in passing argument 1 of 'resampleAux' differ in signedness
+src/Resample.c:1:9: note: expected 'int16_t *' but argument is of type 'uint16_t *'
+src/Resample.c:40:5: warning: pointer targets in passing argument 3 of 'resampleAux' differ in signedness
+src/Resample.c:1:9: note: expected 'int16_t *' but argument is of type 'uint16_t *'
+In file included from src.c:7:0,
+                 from codigo.c:56:
+src\BMA400.c: In function 'read_acc_data':
+src\BMA400.c:136:5: warning: implicit declaration of function 'SPI_data_proccess'
+src\BMA400.c:123:20: warning: unused variable 'read_package'
+src\BMA400.c: At top level:
+src\BMA400.c:145:6: warning: conflicting types for 'SPI_data_proccess'
+src\BMA400.c:136:5: note: previous implicit declaration of 'SPI_data_proccess' was here
+
+C:\Users\RFI\Dropbox\___RFI Project\Firm\Developments\ing.ramiro.a.l@gmail.com\My Projects\Prueba_DINA_Modbus\DinaCal_1\target>"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   -o dist/default/production/target.production.elf  build/default/production/codigo.o      -mcpu=24FJ128GC006        -omf=elf -DXPRJ_default=default      -Wl,,,--defsym=__MPLAB_BUILD=1,,--script=p24FJ128GC006.gld,--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="dist/default/production/target.production.map",--report-mem,--memorysummary,dist/default/production/memoryfile.xml  -mdfp="C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16"  
+elf-gcc.exe: build/default/production/codigo.o: No such file or directory
+
+C:\Users\RFI\Dropbox\___RFI Project\Firm\Developments\ing.ramiro.a.l@gmail.com\My Projects\Prueba_DINA_Modbus\DinaCal_1\target>"C:\Program Files\Microchip\xc16\v2.00\bin"\\xc16-bin2hex dist/default/production/target.production.elf -a  -omf=elf   -mdfp="C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16"  
+  C:\Program Files\Microchip\xc16\v2.00\bin\bin/elf-bin2hex.exe: dist/default/production/target.production.elf could not be opened.

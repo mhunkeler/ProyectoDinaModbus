@@ -249,4 +249,18 @@
 #define RPOUT_ACC_INT1  _RP11R
 #define RPIN_ACC_INT1   11
 #define HAL_PinMap_ACC_INT1(cfg_type)
+#define TRIS_RS232A_TX _TRISF4
+#define PIN_RS232A_TX  _RF4
+#define LAT_RS232A_TX  _LATF4
+#define ODC_RS232A_TX _ODF4
+#define RPOUT_RS232A_TX  _RP10R
+#define RPIN_RS232A_TX   10
+#define HAL_PinMap_RS232A_TX(cfg_type)
+#define TRIS_RS232A_RX _TRISF5
+#define PIN_RS232A_RX  _RF5
+#define LAT_RS232A_RX  _LATF5
+#define ODC_RS232A_RX _ODF5
+#define RPOUT_RS232A_RX  _RP17R
+#define RPIN_RS232A_RX   17
+#define HAL_PinMap_RS232A_RX(cfg_type)
 #define nombrePCB "DinaAIB_FA_V2"

@@ -95,6 +95,7 @@ void modbus_init_()
    HAL_GPIO_PinCfg(MODBUS_RX,GPIO_INPUT);     // (D3.0) 
    HAL_GPIO_PinCfg(MODBUS_TX,GPIO_OUTPUT);    // (D3.0) 
    UARTX1_Init(MODBUS_SERIAL_BAUD);
+   UARTX1_simplexMode();
 }
 void modbus_enable_timeout(int1 enable)
 {

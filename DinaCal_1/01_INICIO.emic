@@ -1,0 +1,22 @@
+#define nombreModulo "Dina"
+#addToMacro(UC_FAMILY,pic24fj128gc006)
+//--------------Hardware Config---------------------
+#insertFile(_pcb\pcb.emic,pcb=Dina_PCB_V2)
+
+//------------- Driver Config -----------------------
+#insertFile(_api\Indicators\LEDs\led.emic)
+//#newRFIcode(_api/DataSource/RAM/ram.emic)
+#insertFile(_api\Timer\Timer_API_V1.emic)
+
+#insertFile(_api/Dyna/Dyna.emic)
+
+#insertFile(_api\Sensors\Accelerometer\Accelerometer.emic,sensor=BMA400)
+#insertFile(_api/DataSource/Force/Force_api.emic,name=FORCE,channel=13)
+
+//#insertFile(_api\Wireless_Communication\Radio_FSK\Radio_FSK.emic)
+#insertFile(_api/Dyna/DinaMsg.emic,puerto=1,baud=9600,bufferIn=512,bufferOut=512)
+
+#newRFIcode(_api\Power_Management\Power_manager.emic)
+
+//---------------------------------------------------
+#insertFile(_main/baremetal/main.emic)

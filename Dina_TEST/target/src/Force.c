@@ -20,5 +20,8 @@ void Force_ON(void)
 }
 void Force_OFF(void)
 {
+    SD1CON1bits.SDON = 0;
+    HAL_GPIO_PinSet(DIV_REF_POW,GPIO_LOW);
+    HAL_GPIO_PinSet(OP_CELDA_POW,GPIO_LOW);
     HAL_GPIO_PinSet(CELDA_POWP,GPIO_LOW);
 }

@@ -35,7 +35,6 @@ char presistArray_ persistArrayInit[2];
 #define _TIMER_API_EMIC_
 #include "inc\Timer_API_V1.h"
 #define carta_EMIC
-#include "inc/CartaTest.h"
 #include "inc/sourfaceCard.h"
 #include "inc/DetectorCiclo.h"
 #include "inc/Resample.h"

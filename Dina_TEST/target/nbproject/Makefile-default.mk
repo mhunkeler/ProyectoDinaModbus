@@ -44,6 +44,12 @@ else
 COMPARISON_BUILD=
 endif
 
+ifdef SUB_IMAGE_ADDRESS
+SUB_IMAGE_ADDRESS_COMMAND=--image-address $(SUB_IMAGE_ADDRESS)
+else
+SUB_IMAGE_ADDRESS_COMMAND=
+endif
+
 # Object Directory
 OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 
@@ -89,14 +95,14 @@ MP_LINKER_FILE_OPTION=,--script=p24FJ128GC006.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/codigo.o: codigo.c  .generated_files/flags/default/375d8ec89d04ae5503c8dd5d9ae20c7e385af13e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/codigo.o: codigo.c  .generated_files/flags/default/3ba54739555a861cbe2dfee6446e5825e2826626 .generated_files/flags/default/7a49f1ea6eb2e04a417ed9633873540b2ecbaf41
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/codigo.o.d 
 	@${RM} ${OBJECTDIR}/codigo.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  codigo.c  -o ${OBJECTDIR}/codigo.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/codigo.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -msmall-code -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 else
-${OBJECTDIR}/codigo.o: codigo.c  .generated_files/flags/default/bb9d986fa3c974d3aa1bfbd8e6f646c790ae3638 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/codigo.o: codigo.c  .generated_files/flags/default/fa64af8096cc9b4af5e44596c420e878573452b8 .generated_files/flags/default/7a49f1ea6eb2e04a417ed9633873540b2ecbaf41
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/codigo.o.d 
 	@${RM} ${OBJECTDIR}/codigo.o 
@@ -147,7 +153,7 @@ endif
 # Enable dependency checking
 .dep.inc: .depcheck-impl
 
-DEPFILES=$(wildcard ${POSSIBLE_DEPFILES})
+DEPFILES=$(shell mplabwildcard ${POSSIBLE_DEPFILES})
 ifneq (${DEPFILES},)
 include ${DEPFILES}
 endif

@@ -1,1 +1,1 @@
-blkLed2 3? Evaluate:detectarCiclo 2getForce 0[in case of:1, do:AccPower 1ApiForce_OFF 0resample 0pFSKD 0blkLed1 3setTime1 2 ][in case of:3, do:AccPower 1ApiForce_OFF 0resample 0pFSKD 0blkLed1 3setTime1 2 ]+-?blkLed2 3setTime2 2blkLed2 3RadioSleep 0deepSleep 0initDetector 0AccPower 1
+? Evaluate:detectarCiclo 2getForce 0[in case of:1, do:AccPower 1ApiForce_OFF 0resample 0pFSKD 0setTime1 2 ][in case of:3, do:AccPower 1ApiForce_OFF 0resample 0pFSKD 0setTime1 2 ]+-?blkLed2 3setTime2 2RadioSleep 0deepSleep 0initDetector 0AccPower 1

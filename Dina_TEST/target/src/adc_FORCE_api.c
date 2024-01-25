@@ -1,7 +1,6 @@
 uint16_t getForce(void)
 {
-    readADC();
-    return fuerzas_m[indexCardF++];
+    return readADC();
 }
 void init_ForceApi(void)
 {

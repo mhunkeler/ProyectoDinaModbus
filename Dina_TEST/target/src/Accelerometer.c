@@ -33,8 +33,7 @@ void Accelerometer_Poll(void)
     {
         if (AccPowerOn == 1)
         {
-            uint16_t miAccX = aceleraciones_m[indexCardA++];
-            eAccReady(miAccX,accY,accZ);
+        eAccReady(accX,accY,accZ);
         }
     }
 }

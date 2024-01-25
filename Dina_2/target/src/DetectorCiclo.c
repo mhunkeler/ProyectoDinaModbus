@@ -4,13 +4,14 @@ int16_t inicio_g = 0;
 int16_t fin_g = 0;
 int16_t FIFOsize_g = 0;
 bufferIndex_g = 0;
-int16_t aceleracion_acum_g = 0, fuerza_acum_g = 0;
+int32_t aceleracion_acum_g = 0;
+uint32_t fuerza_acum_g = 0;
 int16_t estado_g = 0;
 int16_t anterior_g = 0;
 typedef struct
 {
     int16_t aceleracion;
-    int16_t fuerza;
+    uint16_t fuerza;
 } DataPoint;
 DataPoint cola_g[64];
 void push(int16_t acel, int16_t fuer)
@@ -44,7 +45,7 @@ void initDetector()
     estado_g = 0;
     anterior_g = 0;
 }
-uint8_t detectarCiclo(int16_t acel, int16_t fuerza)
+uint8_t detectarCiclo(int16_t acel, uint16_t fuerza)
 {
     push(acel - UMBRAL, fuerza);
     aceleracion_acum_g += (acel - UMBRAL);
@@ -56,16 +57,24 @@ uint8_t detectarCiclo(int16_t acel, int16_t fuerza)
             case 0:
                 if (bufferIndex_g < (MAX_SIZE / 2 )) // Verificación para evitar desbordamiento de buffer
                 {
-                    bufferAcel_g[bufferIndex_g] = aceleracion_acum_g;//  / FILTRO_LONGITUD;
-                    bufferFuer_g[bufferIndex_g] = fuerza_acum_g;// / FILTRO_LONGITUD;
+                    bufferAcel_g[bufferIndex_g] = aceleracion_acum_g / 4;//  / FILTRO_LONGITUD;
+                    bufferFuer_g[bufferIndex_g] = fuerza_acum_g / 32;// / FILTRO_LONGITUD;
                     bufferIndex_g++;
                     if (anterior_g < 0 && aceleracion_acum_g >= 0)
                     {
                         bufferIndex_g = 0;
-                        bufferAcel_g[bufferIndex_g] = aceleracion_acum_g;//  / FILTRO_LONGITUD;
-                        bufferFuer_g[bufferIndex_g] = fuerza_acum_g;// / FILTRO_LONGITUD;
+                        bufferAcel_g[bufferIndex_g] = aceleracion_acum_g / 4;//  / FILTRO_LONGITUD;
+                        bufferFuer_g[bufferIndex_g] = fuerza_acum_g / 32;// / FILTRO_LONGITUD;
                         bufferIndex_g++;
                         estado_g = 1;
+                    }
+                    if (anterior_g > 0 && aceleracion_acum_g <= 0)
+                    {
+                        bufferIndex_g = 0;
+                        bufferAcel_g[bufferIndex_g] = aceleracion_acum_g / 4;//  / FILTRO_LONGITUD;
+                        bufferFuer_g[bufferIndex_g] = fuerza_acum_g / 32;// / FILTRO_LONGITUD;
+                        bufferIndex_g++;
+                        estado_g = 2;
                     }
                 }
                 else
@@ -79,10 +88,33 @@ uint8_t detectarCiclo(int16_t acel, int16_t fuerza)
             case 1:
                 if (bufferIndex_g < MAX_SIZE) // Verificación para evitar desbordamiento de buffer
                 {
-                    bufferAcel_g[bufferIndex_g] = aceleracion_acum_g;// / FILTRO_LONGITUD;
-                    bufferFuer_g[bufferIndex_g] = fuerza_acum_g;// / FILTRO_LONGITUD;
+                    bufferAcel_g[bufferIndex_g] = aceleracion_acum_g / 4;// / FILTRO_LONGITUD;
+                    bufferFuer_g[bufferIndex_g] = fuerza_acum_g  / 32;// / FILTRO_LONGITUD;
                     bufferIndex_g++;
                     if (anterior_g < 0 && aceleracion_acum_g >= 0)
+                    {
+                        bufferIndex_g--;
+                        sourfaceCardInfo.period  = bufferIndex_g * 40;
+                        sourfaceCardInfo.GPM = (uint16_t)  (6000000.0 / (float) sourfaceCardInfo.period);
+                        sourfaceCardInfo.status = 1;
+                        return 1;
+                    }
+                }
+                else
+                {
+                    sourfaceCardInfo.GPM = 0;
+                    sourfaceCardInfo.period  = bufferIndex_g * 40;
+                    sourfaceCardInfo.status = 3;
+                    return 3;
+                }
+                break;
+            case 2:
+                if (bufferIndex_g < MAX_SIZE) // Verificación para evitar desbordamiento de buffer
+                {
+                    bufferAcel_g[bufferIndex_g] = aceleracion_acum_g / 4;// / FILTRO_LONGITUD;
+                    bufferFuer_g[bufferIndex_g] = fuerza_acum_g  / 32;// / FILTRO_LONGITUD;
+                    bufferIndex_g++;
+                    if (anterior_g > 0 && aceleracion_acum_g <= 0)
                     {
                         bufferIndex_g--;
                         sourfaceCardInfo.period  = bufferIndex_g * 40;

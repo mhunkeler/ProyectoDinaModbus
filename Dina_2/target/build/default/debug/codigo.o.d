@@ -1,5 +1,5 @@
 build/default/debug/codigo.o: codigo.c inc\Dina_PCB_V2.h inc/gpio.h \
- inc/pinMap.h inc\timer.h inc\ledV2.h inc\Timer_API_V1.h \
+ inc/pinMap.h inc\timer.h inc\ledV2.h inc\Timer_API_V1.h inc/CartaTest.h \
  inc/sourfaceCard.h inc/DetectorCiclo.h inc/Resample.h master\inc\spi2.h \
  inc\BMA400.h inc\Accelerometer.h inc\adc.h inc/Force.h \
  inc/adc_FORCE_api.h Master\inc\spi.h inc\Radio_intermedio.h \
@@ -22,6 +22,8 @@ inc\timer.h:
 inc\ledV2.h:
 
 inc\Timer_API_V1.h:
+
+inc/CartaTest.h:
 
 inc/sourfaceCard.h:
 

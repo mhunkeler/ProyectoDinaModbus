@@ -9,4 +9,4 @@ union sourfaceCardInfo_U
     uint16_t data[16];
 } sourfaceCardInfo;
 int16_t resampledAcc[64];
-int16_t resampledForc[64];
+uint16_t resampledForc[64];

@@ -1,6 +1,6 @@
 // Script
 
-const char eAccReady[] = "#blkLed2(«20»,«21»,«1»)#detectarCiclo(%A,#getForce())«1»«#AccPower(«0»)#resample()#pFSKD()#blkLed1(«100»,«200»,«1»)#setTime1(«5000»,«T»)»«2»«#AccPower(«0»)#resample()#pFSKD()#blkLed1(«100»,«200»,«1»)#setTime1(«5000»,«T»)»";
+const char eAccReady[] = "#blkLed2(«20»,«21»,«1»)#detectarCiclo(%A,#getForce())«1»«#AccPower(«0»)#resample()#pFSKD()#blkLed1(«100»,«200»,«1»)#setTime1(«5000»,«T»)»«3»«#AccPower(«0»)#resample()#pFSKD()#blkLed1(«100»,«200»,«1»)#setTime1(«5000»,«T»)»";
 
 const char onReset[] = "#blkLed2(«20»,«100»,«1»)#AccPower(«1»)";
 

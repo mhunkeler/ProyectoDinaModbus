@@ -1,6 +1,4 @@
 #define event_eAccReady_active
-#define use_blkLed2_function
-#define use_pullLeds_function
 #define usexSeleV1
 #define use_detectarCiclo_function
 #define use_getForce_function
@@ -8,18 +6,12 @@
 #define use_ApiForce_OFF_function
 #define use_resample_function
 #define use_pFSKD_function
-#define use_blkLed1_function
-#define use_pullLeds_function
 #define use_setTime1_function
-#define use_blkLed1_function
-#define use_pullLeds_function
 #define event_onReset_active
 #define use_blkLed2_function
 #define use_pullLeds_function
 #define use_setTime2_function
 #define event_errorFSK_active
-#define use_blkLed2_function
-#define use_pullLeds_function
 #define event_etOut1_active
 #define use_RadioSleep_function
 #define event_sleepFSK_active
@@ -41,7 +33,6 @@ char presistArray_ persistArrayInit[2];
 #define _TIMER_API_EMIC_
 #include "inc\Timer_API_V1.h"
 #define carta_EMIC
-#include "inc/CartaTest.h"
 #include "inc/sourfaceCard.h"
 #include "inc/DetectorCiclo.h"
 #include "inc/Resample.h"

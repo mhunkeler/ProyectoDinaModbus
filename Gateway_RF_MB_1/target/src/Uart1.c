@@ -118,6 +118,8 @@ void UARTX1_init(void)
 	__builtin_write_OSCCONL(OSCCON & 0xBF);
 	RPOUT_U1_TX =_RPOUT_U1TX;	// RPIN_TX1 -> UART1:U1TX
 	_U1RXR = RPIN_U1_RX;  		//	RPINR18bits.U1RXR = RPIN_U1RX		// RB15->UART1:U1RX
+		_U1CTSR = RPIN_U1_CTS;
+		RPOUT_U1_RTS = _RPOUT_U1RTS;
 	__builtin_write_OSCCONL(OSCCON | 0x40);
 	U1MODEbits.BRGH = 0;
     UARTX1_bd((uint32_t)UARTX1_baud);

@@ -1,14 +1,21 @@
 
-C:\Users\RFI\Dropbox\___RFI Project\Firm\Developments\mariano.hunkeler@rfindustrial.com\My Projects\Prueba_DINA_Modbus\Dina_TEST\target>"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   codigo.c  -o build/default/production/codigo.o  -c -mcpu=24FJ128GC006  -MP -MMD -MF "build/default/production/codigo.o.d"        -g -omf=elf -DXPRJ_default=default      -msmall-code -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16" 
+C:\Users\RFI\Dropbox\___RFI Project\Firm\Developments\ing.ramiro.a.l@gmail.com\My Projects\Prueba_DINA_Modbus\Dina_TEST\target>"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   codigo.c  -o build/default/production/codigo.o  -c -mcpu=24FJ128GC006  -MP -MMD -MF "build/default/production/codigo.o.d"        -g -omf=elf -DXPRJ_default=default      -msmall-code -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16" 
 In file included from inc\adc.h:2:0,
-                 from codigo.c:50:
+                 from codigo.c:49:
 c:\program files\microchip\xc16\v2.00\bin\bin\../..\support\peripheral_24F/adc.h:2940:2: warning: #warning "Does not build on this target"
 In file included from src.c:4:0,
-                 from codigo.c:67:
+                 from codigo.c:66:
 src/DetectorCiclo.c:6:1: warning: data definition has no type or storage class
 src/DetectorCiclo.c:6:1: warning: type defaults to 'int' in declaration of 'bufferIndex_g'
+In file included from src.c:5:0,
+                 from codigo.c:66:
+src/Resample.c: In function 'resample':
+src/Resample.c:40:5: warning: pointer targets in passing argument 1 of 'resampleAux' differ in signedness
+src/Resample.c:1:9: note: expected 'int16_t *' but argument is of type 'uint16_t *'
+src/Resample.c:40:5: warning: pointer targets in passing argument 3 of 'resampleAux' differ in signedness
+src/Resample.c:1:9: note: expected 'int16_t *' but argument is of type 'uint16_t *'
 In file included from src.c:7:0,
-                 from codigo.c:67:
+                 from codigo.c:66:
 src\BMA400.c: In function 'read_acc_data':
 src\BMA400.c:136:5: warning: implicit declaration of function 'SPI_data_proccess'
 src\BMA400.c:123:20: warning: unused variable 'read_package'
@@ -16,18 +23,18 @@ src\BMA400.c: At top level:
 src\BMA400.c:145:6: warning: conflicting types for 'SPI_data_proccess'
 src\BMA400.c:136:5: note: previous implicit declaration of 'SPI_data_proccess' was here
 In file included from src.c:12:0,
-                 from codigo.c:67:
+                 from codigo.c:66:
 Master\src\spi.c: In function 'SPI1_send_async':
 Master\src\spi.c:80:17: warning: assignment from incompatible pointer type
 In file included from src.c:14:0,
-                 from codigo.c:67:
+                 from codigo.c:66:
 src\RadioFSK.c: In function 'Radio_Encrypt':
 src\RadioFSK.c:7:3: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness
 c:\program files\microchip\xc16\v2.00\bin\bin\../..\include/string.h:52:8: note: expected 'const char *' but argument is of type 'uint8_t *'
 src\RadioFSK.c:7:3: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness
 c:\program files\microchip\xc16\v2.00\bin\bin\../..\include/string.h:52:8: note: expected 'const char *' but argument is of type 'uint8_t *'
 In file included from src.c:14:0,
-                 from codigo.c:67:
+                 from codigo.c:66:
 src\RadioFSK.c: In function 'Radio_getStatus':
 src\RadioFSK.c:55:19: warning: unused variable 'lowByte'
 src\RadioFSK.c:55:10: warning: unused variable 'highByte'
@@ -35,7 +42,7 @@ src\RadioFSK.c: In function 'RF_Init':
 src\RadioFSK.c:102:2: warning: pointer targets in passing argument 1 of 'strcpy' differ in signedness
 c:\program files\microchip\xc16\v2.00\bin\bin\../..\include/string.h:31:7: note: expected 'char * restrict' but argument is of type 'uint8_t *'
 
-C:\Users\RFI\Dropbox\___RFI Project\Firm\Developments\mariano.hunkeler@rfindustrial.com\My Projects\Prueba_DINA_Modbus\Dina_TEST\target>"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   -o dist/default/production/target.production.elf  build/default/production/codigo.o      -mcpu=24FJ128GC006        -omf=elf -DXPRJ_default=default      -Wl,,,--defsym=__MPLAB_BUILD=1,,--script=p24FJ128GC006.gld,--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="dist/default/production/target.production.map",--report-mem,--memorysummary,dist/default/production/memoryfile.xml  -mdfp="C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16"  
+C:\Users\RFI\Dropbox\___RFI Project\Firm\Developments\ing.ramiro.a.l@gmail.com\My Projects\Prueba_DINA_Modbus\Dina_TEST\target>"C:\Program Files\Microchip\xc16\v2.00\bin\xc16-gcc.exe"   -o dist/default/production/target.production.elf  build/default/production/codigo.o      -mcpu=24FJ128GC006        -omf=elf -DXPRJ_default=default      -Wl,,,--defsym=__MPLAB_BUILD=1,,--script=p24FJ128GC006.gld,--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="dist/default/production/target.production.map",--report-mem,--memorysummary,dist/default/production/memoryfile.xml  -mdfp="C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16"  
 
 
 xc16-ld 2.00 (B)
@@ -49,12 +56,12 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200              0x3f9a          0x5f67  (24423)
-.const                      0x419a               0xbbc          0x119a  (4506)
-.text                       0x4d56              0x1cc0          0x2b20  (11040)
-.dinit                      0x6a16                0xa2            0xf3  (243)
-.init.delay32               0x6ab8                0x1c            0x2a  (42)
+.const                      0x419a                0xcc           0x132  (306)
+.text                       0x4266              0x1ea2          0x2df3  (11763)
+.dinit                      0x6108                0xa2            0xf3  (243)
+.init.delay32               0x61aa                0x1c            0x2a  (42)
 
-                 Total "program" memory used (bytes):         0x9d3e  (40254) 30%
+                 Total "program" memory used (bytes):         0x8fa9  (36777) 28%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -87,4 +94,4 @@ Info: Project is using a large data memory model when small data memory model is
 
 Info: Loading file: C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16/bin/../support/PIC24F/gld\\p24FJ128GC006.gld
 
-C:\Users\RFI\Dropbox\___RFI Project\Firm\Developments\mariano.hunkeler@rfindustrial.com\My Projects\Prueba_DINA_Modbus\Dina_TEST\target>"C:\Program Files\Microchip\xc16\v2.00\bin"\\xc16-bin2hex dist/default/production/target.production.elf -a  -omf=elf   -mdfp="C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16"  
+C:\Users\RFI\Dropbox\___RFI Project\Firm\Developments\ing.ramiro.a.l@gmail.com\My Projects\Prueba_DINA_Modbus\Dina_TEST\target>"C:\Program Files\Microchip\xc16\v2.00\bin"\\xc16-bin2hex dist/default/production/target.production.elf -a  -omf=elf   -mdfp="C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC24F-GC_DFP/1.4.69/xc16"  

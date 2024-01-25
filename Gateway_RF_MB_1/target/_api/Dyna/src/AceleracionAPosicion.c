@@ -4,13 +4,13 @@ void procesarPosicion(int16_t aceleracion_u16[],const int tam_array, float time,
     for (int i = 0; i < tam_array; i++) {
         aceleracion[i] = (float)aceleracion_u16[i];
     }
-    float dt = time /1000 / tam_array;
+    float dt = (time / tam_array)/1000.0;
     for (int i = 0; i < tam_array; i++) {
         proPosAcc += aceleracion[i]; // * dt;
         velocidad[i] = proPosAcc;
         proPosAcc2 += proPosAcc;
     }
-    float velOffset = proPosAcc2 / tam_array;;
+    float velOffset = proPosAcc2 / tam_array;
     for (int i = 0; i < tam_array; i++) {
         velocidad[i] -= velOffset;
     }
@@ -42,7 +42,7 @@ void procesarPosicion(int16_t aceleracion_u16[],const int tam_array, float time,
         }
         for (int i = 0; i < tam_array; i++)
         {
-            posicion[i] = _posicion[i]*dt*dt*9.8/32.0/(float)ajusteAcc*100.0/2.54;
+            posicion[i] = _posicion[i]*dt*dt*9.8/8.0/(float)ajusteAcc*100.0/2.54;
         }
     }
 }
@@ -62,7 +62,7 @@ void ajusteFuerza(int16_t tam_array)
             for (int i = 0; i < tam_array; i++)
         {
             resampledForc[i] -= offsetFuerza;
-            resampledForc[i] = (int16_t) ((float)(resampledForc[i]-offsetFuerza) * (float)spanFuerzaN / (float)spanFuerzaD )  ;
+            resampledForc[i] = (int16_t) ((float)(resampledForc[i]) * (float)spanFuerzaN / (float)spanFuerzaD )  ;
         }
 }
 void cargarenMODBUS(float _posicion[], int16_t _fuerza[], union sourfaceCardInfo_U _info){
@@ -97,6 +97,6 @@ void procesar()
     }
     else
     {
-        cargarenMODBUS(resampledAcc, resampledForc, sourfaceCardInfo);
+        cargarenMODBUS2(resampledAcc, resampledForc, sourfaceCardInfo);
     }
 }
